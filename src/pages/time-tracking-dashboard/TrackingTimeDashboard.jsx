@@ -1,18 +1,22 @@
 import Profile from './components/report-card/Profile'
-import Tracking from './components/report-card/Tracking'
 import { TrackingContextProvider } from '../../contexts/TrackingContext'
 import TrackingCard from './components/tracking-cards/TrackingCard'
+import TrackingTimeOption from './components/report-card/TrackingTimeOption'
+import { DataContextProvider } from '../../contexts/DataContext'
 
 const TrackingTimeDashboard = () => {
   return (
-    <TrackingContextProvider>
-        <article>
-            <Profile />
-            <Tracking />
-        </article>
+    <DataContextProvider>
+      <TrackingContextProvider>
+            <article>
+                <Profile />
+                <TrackingTimeOption/>
+            </article>
 
-        <TrackingCard/>
-    </TrackingContextProvider>
+            <TrackingCard/>
+        </TrackingContextProvider>
+    </DataContextProvider>
+  
   )
 }
 
