@@ -2,8 +2,7 @@
     "timeFrames":{
       "daily":"daily",
       "weekly":"weekly",
-      "monthly": "monthly",
-      "2-Dias": "2-Dias"
+      "monthly": "monthly"
     },
 
   "timeInfos":[
