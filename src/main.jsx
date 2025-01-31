@@ -6,6 +6,9 @@ import TrackingTimeDashboard from './pages/time-tracking-dashboard/TrackingTimeD
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <TrackingTimeDashboard />
+    <main>
+      <TrackingTimeDashboard />
+    </main>
+    
   </StrictMode>
 )

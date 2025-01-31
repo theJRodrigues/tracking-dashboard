@@ -1,11 +1,12 @@
 {
-    "typestimeframes":{
+    "timeFrames":{
       "daily":"daily",
       "weekly":"weekly",
-      "monthly": "monthly"
+      "monthly": "monthly",
+      "2-Dias": "2-Dias"
     },
 
-  "infos":[
+  "timeInfos":[
       {
         "title": "Work",
         "timeframes": {

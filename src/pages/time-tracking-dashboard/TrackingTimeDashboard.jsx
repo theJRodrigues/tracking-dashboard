@@ -1,23 +1,38 @@
-import Profile from './components/report-card/Profile'
-import { TrackingContextProvider } from '../../contexts/TrackingContext'
-import TrackingCard from './components/tracking-cards/TrackingCard'
-import TrackingTimeOption from './components/report-card/TrackingTimeOption'
-import { DataContextProvider } from '../../contexts/DataContext'
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+
+import Profile from "./components/report-card/Profile";
+import TimeFrameOption from "./components/report-card/TimeFrameOption";
+import TrackingCard from "./components/tracking-cards/TrackingCard";
+
 
 const TrackingTimeDashboard = () => {
+  const [timeFramesData, setTimeFramesData] = useState();
+  const [timeInfosData, setTimeInfosData] = useState();
+
+  useEffect(() =>{
+    const getData = async () =>{
+      const response = await axios
+      .get("https://raw.githubusercontent.com/theJRodrigues/tracking-dashboard/refs/heads/main/src/assets/datas/data.json")
+      .then(response => {
+        setTimeFramesData(Object.values(response.data.timeFrames))
+        setTimeInfosData(Object.values(response.data.timeInfos))
+      })
+    }
+    getData()
+  },[])
+
+  console.log(timeFramesData, timeInfosData);
   return (
-    <DataContextProvider>
-      <TrackingContextProvider>
-            <article>
-                <Profile />
-                <TrackingTimeOption/>
-            </article>
+    <>
+      <article>
+        <Profile />
+        <TimeFrameOption />
+      </article>
+      <TrackingCard />
+    </>
+  );
+};
 
-            <TrackingCard/>
-        </TrackingContextProvider>
-    </DataContextProvider>
-  
-  )
-}
-
-export default TrackingTimeDashboard
+export default TrackingTimeDashboard;
