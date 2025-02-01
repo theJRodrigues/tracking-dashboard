@@ -1,36 +1,57 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 import axios from "axios";
-
-
-import Profile from "./components/report-card/Profile";
+import UserProfile from "./components/report-card/UserProfile";
 import TimeFrameOption from "./components/report-card/TimeFrameOption";
-import TrackingCard from "./components/tracking-cards/TrackingCard";
+import TrackingTimeCard from "./components/tracking-cards/TrackingTimeCard";
 
 
 const TrackingTimeDashboard = () => {
-  const [timeFramesData, setTimeFramesData] = useState();
-  const [timeInfosData, setTimeInfosData] = useState();
+  const [timeFrameOpt, setTimeFrameOpt] = useState();
+  const [timeInfo, setTimeInfo] = useState();
+  const [user, setUser] = useState();
+  const [frameOption, setFrameOption] = useState("daily");
 
   useEffect(() =>{
     const getData = async () =>{
-      const response = await axios
-      .get("https://raw.githubusercontent.com/theJRodrigues/tracking-dashboard/refs/heads/main/src/assets/datas/data.json")
-      .then(response => {
-        setTimeFramesData(Object.values(response.data.timeFrames))
-        setTimeInfosData(Object.values(response.data.timeInfos))
-      })
+      try {
+        const response = await axios.get("https://raw.githubusercontent.com/theJRodrigues/tracking-dashboard/refs/heads/main/src/assets/datas/data.json");
+        setTimeFrameOpt(Object.values(response.data.timeFramesOpt));
+        setTimeInfo(Object.values(response.data.timeInfos));
+        setUser(response.data.user);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     }
-    getData()
+    getData();
   },[])
 
-  console.log(timeFramesData, timeInfosData);
+  
   return (
     <>
+    <section>
       <article>
-        <Profile />
-        <TimeFrameOption />
+        <UserProfile name={user?.name} avatar={user?.avatar}/>
+        <nav>
+          <ul>
+            {timeFrameOpt?.map(option => 
+            <TimeFrameOption 
+            key={option}
+            timeFrameOpt={option}
+            setOption= {() => setFrameOption(option)}
+            />)}
+          </ul>
+        </nav>
       </article>
-      <TrackingCard />
+    </section>
+      
+    <section>
+      {timeInfo?.map(info => info?.timeframes?.[frameOption] 
+      && <TrackingTimeCard 
+          key={info?.type} 
+          title= {info?.type} 
+          trackingTime={info?.timeframes?.[frameOption]}/>)}
+    </section>
+      
     </>
   );
 };

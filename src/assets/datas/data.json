@@ -1,14 +1,18 @@
 {
-    "timeFrames":{
-      "daily":"daily",
-      "weekly":"weekly",
-      "monthly": "monthly",
-      "2-Dias": "2-Dias"
-    },
+  "user": {
+    "name": "Jeremy Robson",
+    "avatar": "https://github.com/theJRodrigues/tracking-dashboard/blob/main/src/assets/images/image-jeremy.png?raw=true"
+  },
+
+  "timeFramesOpt":{
+    "daily":"daily",
+    "weekly":"weekly",
+    "monthly": "monthly"
+  },
 
   "timeInfos":[
       {
-        "title": "Work",
+        "type": "Work",
         "timeframes": {
           "daily": {
             "current": 5,
@@ -25,7 +29,7 @@
         }
       },
       {
-        "title": "Play",
+        "type": "Play",
         "timeframes": {
           "daily": {
             "current": 1,
@@ -42,7 +46,7 @@
         }
       },
       {
-        "title": "Study",
+        "type": "Study",
         "timeframes": {
           "daily": {
             "current": 0,
@@ -59,7 +63,7 @@
         }
       },
       {
-        "title": "Exercise",
+        "type": "Exercise",
         "timeframes": {
           "daily": {
             "current": 1,
@@ -76,7 +80,7 @@
         }
       },
       {
-        "title": "Social",
+        "type": "Social",
         "timeframes": {
           "daily": {
             "current": 1,
@@ -93,7 +97,7 @@
         }
       },
       {
-        "title": "Self Care",
+        "type": "Self Care",
         "timeframes": {
           "daily": {
             "current": 0,

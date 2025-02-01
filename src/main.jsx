@@ -6,9 +6,8 @@ import TrackingTimeDashboard from './pages/time-tracking-dashboard/TrackingTimeD
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <main>
+    <main className="container flex">
       <TrackingTimeDashboard />
     </main>
-    
   </StrictMode>
 )
