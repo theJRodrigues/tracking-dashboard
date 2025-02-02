@@ -7,8 +7,8 @@ const UserProfile = ({name, avatar}) => {
           <img src={avatar} alt={name} />
         </figure>
         <div>
-          <h2>Report for</h2>
-          <h3>{name}</h3>
+          <h3>Report for</h3>
+          <h1>{name}</h1>
         </div>
       </div>
     
