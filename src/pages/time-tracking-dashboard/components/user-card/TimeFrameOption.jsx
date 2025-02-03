@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 const TimeFrameOption = ({timeFrameOpt, setOption}) => {
   return (
-    <li>
+    <li className='text-Desaturated-blue hover:text-white duration-100 w-fit'>
       <button onClick={setOption} 
-      key={timeFrameOpt} className='cursor-pointer'> 
+      key={timeFrameOpt} className='cursor-pointer capitalize'> 
       {timeFrameOpt}
       </button>
     </li>

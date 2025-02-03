@@ -1,19 +1,30 @@
 @import "tailwindcss";
 
-@theme{
-    --color-work: hsl(15, 100%, 70%);
-    --color-play: hsl(195, 74%, 62%);
-    --color-study: hsl(348, 100%, 68%);
-    --color-exercise: hsl(145, 58%, 55%);
-    --color-social: hsl(264, 64%, 52%);
-    --color-self-care: hsl(43, 84%, 65%);
+@font-face {
+    font-family: Rubik-regular;
+    src: url("/assets/fonts/rubik/Rubik-Regular.ttf");
+}
+@font-face {
+    font-family: Rubik-light;
+    src: url("/assets/fonts/rubik/Rubik-Light.ttf");
+}
+@font-face {
+    font-family: Rubik-medium;
+    src: url("/assets/fonts/rubik/Rubik-Medium.ttf");
+}
 
+@theme{
+    --font-Rubik-regular: Rubik-regular, sans-serif;
+    --font-Rubik-light: Rubik-light, sans-serif;
+    --font-Rubik-medium: Rubik-medium, sans-serif;
+    --spacing: 10px;
     --color-Very-dark-blue: hsl(226, 43%, 10%);
     --color-Dark-blue: hsl(235, 46%, 20%);
     --color-Desaturated-blue: hsl(235, 45%, 61%);
     --color-Pale-Blue: hsl(236, 100%, 87%);
+    --color-blue: hsl(246, 80%, 60%);
 }
 
 .card{
-    @apply text-white h-[80%] w-full rounded-lg z-10 absolute bottom-0 bg-Dark-blue w-full cursor-pointer hover:bg-Desaturated-blue duration-200
+    @apply text-white rounded-lg  bg-Dark-blue cursor-pointer hover:bg-Desaturated-blue duration-200
 }
