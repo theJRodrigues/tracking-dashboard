@@ -29,11 +29,11 @@ const TrackingTimeDashboard = () => {
   
   return (
     <>
-    <section>
+    <section className="bg-Dark-blue rounded-2xl">
       <article>
         <UserProfile name={user?.name} avatar={user?.avatar}/>
-        <nav className="bg-Dark-blue p-4 rounded-lg">
-          <ul>
+        <nav className="px-3 py-2">
+          <ul className="flex justify-between gap-0.5">
             {timeFrameOpt?.map(option => 
             <TimeFrameOption 
             key={option}
@@ -44,18 +44,13 @@ const TrackingTimeDashboard = () => {
       </article>
     </section>
       
-    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <section className="flex flex-col gap-2">
       {timeInfos?.map(info => {
         if (!info.timeframes[frameOption]) return null;
-
           const trackingTime = info.timeframes[frameOption];
-          const currentTime = trackingTime.current < 0 ? "Invalid Value"
-          : trackingTime.current ?? "404 Error: Data Not Found";
-          const previousTime = trackingTime.previous < 0 ? "Invalid Value" 
-          : trackingTime.previous ?? "404 Error: Data Not Found";
-
+          
           return (
-          <article key={info.type} className="rounded-lg overflow-hidden" >
+          <article key={info.type} className="rounded-2xl overflow-hidden">
             <ImageTypeCard 
             type={info.type}
             urlImage={info.urlImage} 
@@ -63,8 +58,8 @@ const TrackingTimeDashboard = () => {
 
             <TrackingTimeCard 
             type= {info.type} 
-            currentTime={currentTime}
-            previousTime={previousTime}/>
+            currentTime={trackingTime.current ?? 0}
+            previousTime={trackingTime.previous ?? 0}/>
           </article>
           )}
      )}
