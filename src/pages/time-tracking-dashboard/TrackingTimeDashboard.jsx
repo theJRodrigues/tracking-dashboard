@@ -15,7 +15,7 @@ const TrackingTimeDashboard = () => {
   useEffect(() =>{
     const getData = async () =>{
       try {
-        const response = await axios.get("/src/assets/datas/data.json");
+        const response = await axios.get("https://raw.githubusercontent.com/theJRodrigues/tracking-dashboard/refs/heads/main/src/assets/datas/data.json");
         setTimeFrameOpt(Object.values(response.data.timeFramesOpt));
         setTimeInfos(Object.values(response.data.timeInfos));
         setFrameOption(Object.values(response.data.timeFramesOpt)[0]);
@@ -38,6 +38,7 @@ const TrackingTimeDashboard = () => {
             <TimeFrameOption 
             key={option}
             timeFrameOpt={option}
+            isChecked={option === frameOption}
             setOption= {() => setFrameOption(option)}/>)}
           </ul>
         </nav>
