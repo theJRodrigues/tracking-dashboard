@@ -26,7 +26,7 @@
 }
 
 .card{
-    @apply text-white bg-Dark-blue rounded-2xl relative -top-3 z-10 p-2 hover:bg-Desaturated-blue hover:cursor-pointer duration-100
+    @apply text-white bg-Dark-blue rounded-2xl absolute w-full sm:h-[80%] bottom-0 left-0 z-10 p-2 hover:bg-Desaturated-blue hover:cursor-pointer duration-100 sm:flex sm:flex-col justify-between
 }
 
 

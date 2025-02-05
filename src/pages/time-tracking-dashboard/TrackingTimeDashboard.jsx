@@ -29,11 +29,11 @@ const TrackingTimeDashboard = () => {
   
   return (
     <>
-    <section className="bg-Dark-blue rounded-2xl">
+    <section className="bg-Dark-blue rounded-2xl sm:max-h-45">
       <article>
         <UserProfile name={user?.name} avatar={user?.avatar}/>
         <nav className="px-3 py-2">
-          <ul className="flex justify-between gap-0.5">
+          <ul className="flex justify-between gap-0.5 sm:flex-col sm:gap-1">
             {timeFrameOpt?.map(option => 
             <TimeFrameOption 
             key={option}
@@ -44,13 +44,13 @@ const TrackingTimeDashboard = () => {
       </article>
     </section>
       
-    <section className="flex flex-col gap-2">
+    <section className="flex flex-col w-full gap-2 sm:grid sm:grid-cols-2 md:grid-cols-3">
       {timeInfos?.map(info => {
         if (!info.timeframes[frameOption]) return null;
           const trackingTime = info.timeframes[frameOption];
           
           return (
-          <article key={info.type} className="rounded-2xl overflow-hidden">
+          <article key={info.type} className="rounded-2xl overflow-hidden relative h-15 sm:h-full sm:min-h-20">
             <ImageTypeCard 
             type={info.type}
             urlImage={info.urlImage} 
