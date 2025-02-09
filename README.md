@@ -1,8 +1,15 @@
-# React + Vite
+# Tracking Time Dashboard - FRONTEND MENTOR
+Desafio de formulário para aperfeiçoar as habilidades em:
+### <p style="display: flex; align-item: center;"><img src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/react/react-original.svg" width="20px">ReactJs</p>
+Utilizando o <b><img src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/vitejs/vitejs-original.svg" width="15px"/> Vite</b> para criação do projeto e <b>Axios</b> para requisições HTTP de API.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### <p style="display: flex; align-item: center;"><img src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/tailwindcss/tailwindcss-original.svg" width="20px">  Tailwind Css</p>
+Para uma maior velocidade na estilização do formulário, utilizando Mobile First.
 
-Currently, two official plugins are available:
+## Acesso
+O dashboard está disponível no link abaixo
+</br>
+### <a href= "https://thejrodrigues.github.io/tracking-dashboard/">Tracking Time Dashboard</a>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## PREVIEW
+<img src="public/assets/images/desktop-preview.jpg" width="700px" alt= "design da landing page" />
